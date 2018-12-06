@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+        用户信息管理页面
+    </title>
+</head>
+<body class="skin-blue sidebar-mini" >
+<div class="wrapper">
+    <div class="content-wrapper" style="min-height: 810px;">
+    <section class="content-header">
+        <h1>用户信息管理页面</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-info">
+                    <div class="box-body">
+                        <div class="row">
+                            <form  id="formDiv" method="post" >
+                            <div class="col-md-6">
+                                <label class="control-label col-md-2">环境</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="testgroup" id="testgroup">
+                                        <option value="">请选择</option>
+                                        <option th:each="item:${group}" th:value="${item.key}" th:text="${item.value}"></option>
+                                    </select>
+                                </div>
+                            </div>
+
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-2">银行</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="testbank" id="testbank">
+                                            <option value="">请选择</option>
+                                            <option th:each="item:${bankName}" th:value="${item.key}" th:text="${item.value}"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-info" id="searchBtn">生成开户账号</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="dataTable" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th >环境</th>
+                            <th >手机号</th>
+                            <th >身份证号</th>
+                            <th >账户余额</th>
+                            <th >开户状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<script th:inline="javascript">
+    $(function(){
+    $("#searchBth").click(
+            function(){
+                table.draw(false);
+            })
+    });
+</script>
+</body>
+</html>

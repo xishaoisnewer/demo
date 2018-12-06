@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:hih="http://www.yooli.com/hih">
+<head>
+    <div th:replace="head"></div>
+    <title>渠道额度管理</title>
+</head>
+
+<body class="skin-blue sidebar-mini" >
+<!-- 整个页面容器 -->
+<div class="wrapper">
+    <div class="content-wrapper" style="min-height: 810px;">
+        <!-- Content Header (Page header) 内容表头部分 -->
+        <section class="content-header">
+            <h1>渠道额度管理<small>资金平台</small></h1>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- 页面中的每个box 单独显示的一块-->
+                    <div class="box box-info">
+                        <!--自己代码实现逻辑部分可分为
+                        <div class="box-header with-border">
+                            box title
+                        </div>
+                        <div class="box-body">
+                            box body部分
+                        </div>
+                        -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <div th:replace="footer"></div>
+</div>
+
+<!-- page script -->
+<div th:replace="script"></div>
+<!--
+该页面单独使用的css 和js 引入部分
+<link rel="stylesheet" th:href="@{/plugins/select2/select2.css}"/>
+<script th:src="@{/plugins/select2/select2.full.js}"></script>
+-->
+</body>
+</html>
